@@ -39,7 +39,11 @@ ORDER BY total_pledges"
 end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
-"SELECT projects.category, pledges.amounts"
+"SELECT projects.category, pledges.amount FROM projects
+INNER JOIN pledges
+ON projecs.id = pledges.project_id
+GROUP BY projects.category
+WHEN "
 end
 
 def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_books_category
